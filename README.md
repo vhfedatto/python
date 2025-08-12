@@ -33,3 +33,9 @@ O objetivo é documentar minha evolução, criar uma base de códigos reutilizá
    python nome_do_arquivo.py
    ```
   > É recomendado ter o Python 3 instalado e configurado no PATH do sistema.
+
+---
+
+<div align="center">
+   <img src="assets/icons/Python.svg" width="100px">
+</div>
