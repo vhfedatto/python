@@ -3,4 +3,4 @@ _Esse repositório conta com todos os meus códigos de estudos da linguagem Pyth
 
 ---
 
-_**Fedatto**_
+_**V H Fedatto**_
