@@ -1,5 +1,4 @@
-<img src="assets/icons/Python.svg">
-# 📚 Python Study Repository 
+# 📚 Python Study Repository
 
 Este repositório contém meus estudos, anotações e exercícios práticos relacionados à linguagem **Python**.  
 O objetivo é documentar minha evolução, criar uma base de códigos reutilizáveis e aplicar conceitos aprendidos.
@@ -34,3 +33,9 @@ O objetivo é documentar minha evolução, criar uma base de códigos reutilizá
    python nome_do_arquivo.py
    ```
   > É recomendado ter o Python 3 instalado e configurado no PATH do sistema.
+
+---
+
+<div align="center">
+   <img src="assets/icons/Python.svg" width="100px">
+</div>
