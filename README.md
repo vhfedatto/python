@@ -1,4 +1,5 @@
-# 📚 Python Study Repository
+<img src="assets/icons/Python.svg">
+# 📚 Python Study Repository 
 
 Este repositório contém meus estudos, anotações e exercícios práticos relacionados à linguagem **Python**.  
 O objetivo é documentar minha evolução, criar uma base de códigos reutilizáveis e aplicar conceitos aprendidos.
