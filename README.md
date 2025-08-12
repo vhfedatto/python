@@ -15,7 +15,7 @@ O objetivo é documentar minha evolução, criar uma base de códigos reutilizá
 - Sintaxe e variáveis
 - Estruturas de decisão e repetição
 - Funções e escopo
-- Manipulação de listas, tuplas, dicionários e conjuntos
+- Listas, tuplas e dicionários
 - Fila, Árvore Binária, Grafo
 - Hash
 - Matrizes
