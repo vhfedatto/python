@@ -1,6 +1,6 @@
 # 📚 Python Study Repository
 
-Este repositório contém meus estudos, anotações e exercícios práticos relacionados à linguagem **Python**.  
+Este repositório contém meus estudos, anotações e exercícios práticos relacionados à linguagem **Python** <img src="assets/icons/python-icon.svg" width="16px">.  
 O objetivo é documentar minha evolução, criar uma base de códigos reutilizáveis e aplicar conceitos aprendidos.
 
 ---
@@ -15,7 +15,7 @@ O objetivo é documentar minha evolução, criar uma base de códigos reutilizá
 - Sintaxe e variáveis
 - Estruturas de decisão e repetição
 - Funções e escopo
-- Manipulação de listas, tuplas, dicionários e conjuntos
+- Listas, tuplas e dicionários
 - Fila, Árvore Binária, Grafo
 - Hash
 - Matrizes
