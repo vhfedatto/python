@@ -24,6 +24,10 @@ Python é interpretado por byteCode por meio do REPL (interpretador dele), torna
 - dir -> listagem de todas as pastas disponíveis;
 - cd -> change disk -> entrar e sair de pastas;
 
+```python
+.center(n) # -> n = número de caracteres -> alinha o texto dentro desse espaço n no terminal :)
+```
+
 - Sintaxe: Conjunto de regras que vai regir como você pode escrever os programas -> Se não seguir: Compilador não entende e dá um "Sintaxe error".
 
 ###  2. VARIABLES
@@ -228,4 +232,4 @@ print("Primeira chave-valor: %s = %s" % (pares_list[0][0], pares_list[0][1])) # 
 ---
 
 We have finished this classes (01 to 15).
-Next class [Conditionals](conditionals.md)
+Next class: [Conditionals](conditionals.md)
