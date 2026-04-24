@@ -65,10 +65,74 @@ Operations:
 ```
 - Transformar um resultado float para int, só colocar o ```int()``` e colocar o resultado/variável, dentro dos parenteses.
 
-### Texto e Booleanos
+### Texto
 
 - string -> "Texto"
-- boolean -> True, False;
 
 #### Formatação do Text
-- 
+
+```python
+thing = "World"
+name = "Victor"
+last_name = "Fedatto"
+
+print("Hello,", thing) # Hello, World (print with space between)
+print("Hello," + thing) # Hello,World (without blank space)
+print("Hello," + thing, "of Victor") #Hello,World of Victor (without and with blank space)
+
+#Mais usadas:
+print("Hello, %s" % thing) #Para tratamento de dados, essa é a mais SEGURA. Porque ela transforma para String.
+
+print("Hello, %s %s" % (name, last_name)) #you MUST have to put the () before and after the variables.
+
+print(f"Hello, {thing}") #Mais agradável.
+
+print("Hello, {} {}".format(name, last_name)) #A ordem importa aqui.
+```
+
+#### Métodos do Text
+```python
+
+name.upper() # VICTOR
+name.lower() # victor
+
+name[0] # 'V'
+name.count("t") # 1
+name.find("t") # 3 - index 3
+
+name.encode() #Transform to bytes
+name.encode().decode() #O resultado do "encode" vai ser usado para o "decode" para voltar ao normal a sua variável.
+
+name.replace([target], [context])
+name.replace("v", "b") # Bictor
+
+phone = "(83) 98766-5432"
+phone.replace("-", "").replace(")", "").replace("(", "") # 83 987665432
+
+"-".join(name) #V-i-c-t-o-r
+
+full_name = Victor H Fedatto
+full_name.split(" ") # ['Victor', 'H', 'Fedatto']
+
+#Tratamento de variáveis
+name = "xVictorx"
+name.strip("x") #Victor -> Só faz isso para caracteres no começo e no final.
+name.rstrip("x") #xVictor -> Corta só o Right.
+
+name.startswith("Vi")   #True
+"tor" in full_name      #True
+"tor" not in full_name  #False
+```
+
+- Uma variável não pode ser editada ou alterada. Você pode criar outra a partir dela, mas nunca editar.
+
+### Booleans
+- True // False
+- Operadores Lógicos:
+
+    - AND -> True and True
+    - OR -> True or True | True or False
+    - NOT -> Change
+
+### Lists
+- Coleção de elementos ordenáveis (index) e mutáveis (pode editar);
