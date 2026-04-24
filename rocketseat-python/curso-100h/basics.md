@@ -1,12 +1,8 @@
 # ROCKETSEAT - PYTHON
-Professor: Gabriel Casemiro
-
+Professor: Gabriel Casemiro Rocketseat
 Aluno: Victor H Fedatto Vasconcelos
 
-
-
 ```OBS: Alguns conceitos básicos da linguagem eu não vou focar tanto, pois eu já sou intermediário em Python (e estou fazendo o curso do 0 até o avançado).```
-
 
 ## What is Python?
 
@@ -40,8 +36,6 @@ Python é interpretado por byteCode por meio do REPL (interpretador dele), torna
 Em Python se usa mais:
 1. camelCase -> Classes;
 2. Snake_case -> Variáveis, funções e métodos;
-
-
 
 Boas práticas: [PEP 8](https://peps.python.org/pep-0008/);
 - Curso relacionado que fiz: [Python - Boas Práticas]()
@@ -136,3 +130,102 @@ name.startswith("Vi")   #True
 
 ### Lists
 - Coleção de elementos ordenáveis (index) e mutáveis (pode editar);
+```python
+orders = ["Apple", "Banana", "Orange", "Pizza", "Calzone"]
+
+print(orders[0]) # Apple
+print(orders[1:4]) # ["Banana", "Orange", "Pizza"]
+print(orders[:4]) # ["Apple", "Banana", "Orange", "Pizza"]
+print(orders[1:]) # ["Banana", "Orange", "Pizza", "Calzone"]
+
+orders[0] = "Cake" # ["Cake", "Banana", "Orange", "Pizza", "Calzone"] 
+```
+
+#### Métodos:
+```python
+orders.append("Egg") # ["Cake", "Banana", "Orange", "Pizza", "Calzone", "Egg"]
+orders.index("Egg") # 5
+orders.insert(0, "Cereal") # ["Cereal", "Cake", "Banana", "Orange", "Pizza", "Calzone", "Egg"]
+
+orders.pop(1) # ["Cereal", "Banana", "Orange", "Pizza", "Calzone", "Egg"]
+orders.remove("Calzone") # ["Cereal", "Banana", "Orange", "Pizza", "Egg"]
+
+orders.sort() # ['Banana', 'Cereal', 'Egg', 'Orange', 'Pizza']
+```
+
+### Tuplas
+
+- Coleção ordenada e IMUTÁVEL (não pode mudar - remover, adicionar etc) de elementos.
+
+```python
+tupla = (1,1,2,3,4,5)
+
+tupla[0] # 1
+tupla[-1] # Ultimo elemento - 5
+```
+
+#### Métodos
+
+```python
+cont = tupla.count(1) # 2
+index = tupla.index(0) # 1
+```
+
+### Dicionários
+- Coleção não ordenada de pares chave-valor.
+
+```python
+dic = {
+    "name": 'Victor',
+    "last_name": 'Fedatto',
+    "age": 21,
+    "gender": 'male',
+    "city": "Joao Pessoa",
+    "watch_list": ["Hunger Games", "Star Wars VIII", "FNAF 2"]
+}
+
+print(dic)
+
+#Acessar valores pela chave
+
+print(f"Name: {dic["name"]}")
+print(f"Age: {dic["age"]}")
+print(f"Watch List: {dic["watch_list"]}")
+
+# Adicionar
+dic["favorite_color"] = "Crimson Violet"
+dic["color_hex"] = "#4E132C"
+```
+
+#### Métodos
+
+```python
+# Excluir - chave:valor 
+del dic["city"]
+del dic["color_hex"]
+del dic["favorite_color"]
+
+# Retorno de chaves
+
+chaves = dic.keys() # dict_keys(['name', 'last_name', 'age', 'gender', 'watch_list'])
+chaves_list = list(dic.keys()) # ['name', 'last_name', 'age', 'gender', 'watch_list']
+chaves_list[0] # 'name' -> Para acessar cada elemento individualmente.
+
+# Retorno de todos os valores
+
+values = dic.values() # dict_values(['Victor', 'Fedatto', 21, 'male', ['Hunger Games', 'Star Wars VIII', 'FNAF 2']])
+values_list = list(dic.values()) # ['Victor', 'Fedatto', 21, 'male', ['Hunger Games', 'Star Wars VIII', 'FNAF 2']]
+values_list[0] # Victor 
+
+# Retornar lista de tuplas - cada elementos é uma tupla chave:valor
+
+pares = dic.items() # dict_items([('name', 'Victor'), ('last_name', 'Fedatto'), ('age', 21), ('gender', 'male'), ('watch_list', ['Hunger Games', 'Star Wars VIII', 'FNAF 2']))
+pares_list = list(dic.items()) # [('name', 'Victor'), ('last_name', 'Fedatto'), ('age', 21), ('gender', 'male'), ('watch_list', ['Hunger Games', 'Star Wars VIII', 'FNAF 2'])]
+pares_list[0] # ('name', 'Victor')
+
+print("Primeira chave-valor: %s = %s" % (pares_list[0][0], pares_list[0][1])) # name = Victor
+```
+---
+
+We have finished this classes (01 to 15).
+Next class [Conditionals](conditionals.md)
