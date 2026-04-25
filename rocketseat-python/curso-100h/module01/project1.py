@@ -1,0 +1,46 @@
+import time
+
+def loading():
+    text = "\nLoading..."
+
+    for letter in text:
+        print(letter, end="", flush=True)
+        time.sleep(0.5)
+    print()
+
+def add_task(tasks, name_task):
+    
+    task = {"task": name_task, "done": False}
+    tasks.append(task)
+
+    print(f"Task {name_task} was successfully added")
+
+    loading()
+    return
+
+tasks = []
+
+
+while True:
+    print("\n"+"="*35)
+    print("Menu do Gerenciador de Tarefas:")
+    print("1. Add task")
+    print("2. See tasks")
+    print("3. Update task")
+    print("4. Complete task")
+    print("5. Remove completed tasks")
+    print("6. Exit")
+    print("="*35)
+
+    esc = input("[option] >> ")
+
+    if esc == "1":
+        print('\n'+'='*35, "\nType a name for your task\n")
+        name_task = input("[+] ")
+        add_task(tasks, name_task)
+
+    elif esc == "6":
+        break
+
+    else: 
+        print("Choose a valid option")
