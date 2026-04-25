@@ -5,7 +5,7 @@ def loading():
 
     for letter in text:
         print(letter, end="", flush=True)
-        time.sleep(0.5)
+        time.sleep(0.2)
     print()
 
 def add_task(tasks, name_task):
@@ -18,9 +18,17 @@ def add_task(tasks, name_task):
     loading()
     return
 
+def see_task(tasks):
+    print("\nList of Tasks")
+
+    for i, task in enumerate(tasks, start=1):
+        status = "✓" if task["done"] else " "
+        name_task = task['task']
+        print(f"{i}. [{status}] {name_task}")
+
+
+
 tasks = []
-
-
 while True:
     print("\n"+"="*35)
     print("Menu do Gerenciador de Tarefas:")
@@ -38,6 +46,9 @@ while True:
         print('\n'+'='*35, "\nType a name for your task\n")
         name_task = input("[+] ")
         add_task(tasks, name_task)
+
+    elif esc == "2":
+        see_task(tasks)
 
     elif esc == "6":
         break
