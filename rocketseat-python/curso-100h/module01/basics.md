@@ -229,6 +229,38 @@ pares_list[0] # ('name', 'Victor')
 
 print("Primeira chave-valor: %s = %s" % (pares_list[0][0], pares_list[0][1])) # name = Victor
 ```
+### IMPORT
+
+- É uma boa prática importar apenas as funcionalidades que você precisa e não a biblioteca inteira;
+- Organização e velocidade;
+- Deixa outro dev saber o que você está usando de fora ali e não qualquer coisa;
+
+```python
+from math import sqrt
+
+from random import randint
+
+from time import sleep
+```
+
+- Criar um módulo personalizado:
+    1. Crie um arquivo para o módulo. 
+    2. Crie as funções.
+    3. Coloque um ```import [nome do modulo]``` 
+
+### Import de Módulos de Terceiros:
+
+- Biblioteca ```requests``` -> rodar o ```pip3 install requests```
+- Fazer o importação do requests
+- Passar um get para uma url -> ```responde = requests.get(url)```
+- Printar o status de retorno:
+
+```python
+responde = requests.get(url)
+print(f"Solicitação para {url} retornou o status {response.status_code}")
+```
+
+
 ---
 
 We have finished this classes (01 to 15).

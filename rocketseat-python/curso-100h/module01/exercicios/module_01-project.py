@@ -1,11 +1,11 @@
-import time
+from time import sleep
 
 def loading():
     text = "\nLoading..."
 
     for letter in text:
         print(letter, end="", flush=True)
-        time.sleep(0.2)
+        sleep(0.2)
     print()
 
 def add_task(tasks, name_task):
@@ -37,6 +37,19 @@ def update_task(tasks, index_task, new_name_task):
         print("Index out of range. Try again.")
     return
 
+def complete_task(tasks, index_task):
+    index_adjusted = int(index_task) - 1
+    tasks[index_adjusted]["done"] = True
+    print(f"Task '{index_task}' marked as completed")
+    return
+
+def delete_completed_tasks(tasks):
+    for task in tasks:
+        if task["done"] == True:
+            tasks.remove(task)
+    print("Completed tasks have been deleted.")
+    return
+
 tasks = []
 while True:
     print("\n"+"="*35)
@@ -65,6 +78,15 @@ while True:
         index_task = input("\nType the number of the task you want to update\n[number] ")
         new_name_task = input("-"*35 +"\nType the new name for this task\n[new name] ")
         update_task(tasks, index_task, new_name_task)
+
+    elif esc == "4":
+        see_task(tasks)
+        index_task = input("\nType the task you want to mark as 'completed'\n[number] ")
+        complete_task(tasks, index_task)
+
+    elif esc == "5":
+        delete_completed_tasks(tasks)
+        see_task(tasks)
 
     elif esc == "6":
         break

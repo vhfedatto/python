@@ -102,3 +102,27 @@ n2 = 50
 resultado_soma = soma(n1, n2)
 print(f"O resultado da soma de {n1} e {n2} é {resultado_soma}")
 ```
+
+## EXCEPTIONS
+
+- Bloco de código que ele tente. Se não der certo, vai para a exceção.
+- try, except, raise, else e finally.
+
+```python
+try:
+    num = int(input("Type a number: "))
+    res = 10/num
+
+except ValueError as e:
+    print(f"Error of value error: {e}")
+    raise ValueError("Tipo de variáveis incompativeis")
+
+except Exception as e:
+    print(f"Error: {e}")
+
+else: # Executa caso seja bem sucedido.
+    print(f"Result: {res}")
+
+finally: # Executar mesmo com exceção - vai fazer de toda forma
+    print("Operação Finalizada")
+```
