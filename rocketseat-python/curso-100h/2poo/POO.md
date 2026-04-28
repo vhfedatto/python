@@ -166,5 +166,41 @@ print(carro_amarelo.desligar())
 - Se você fosse criar um Avião, teria que ter a implementação do ligar() e desligar(). Isso ajuda na hora do Banco de Dados etc.
 
 ## HERANÇA MÚLTIPLA
-- Herança comum -> 
-- Herança Múltipla -> 
+
+- Herdar de duas classes. No caso a seguir: Mamifero e Ave.
+
+```python
+class Animal:
+    def __init__(self, nome) -> None:
+        self.nome = nome
+    
+    def emitir_som(self):
+        pass
+
+class Mamifero(Animal):
+    def amamentar(self):
+        return f"{self.nome} está amamentando."
+    
+class Ave(Animal):
+    def voar(self):
+        return f"{self.nome} está voando."
+    
+class Morcego(Ave, Mamifero):
+    def emitir_som(self):
+        super().emitir_som() # Não faz diferença aqui. Para Clean code, delete.
+        return "Morcegos emitem sons ultrassônicos."
+
+bat = Morcego(nome="Batman")
+
+print("Nome: %s"%bat.nome)
+print(f"Som do morcego {bat.emitir_som()}")
+
+# Acessando métodos das classes Mamifero e Ave
+print("Morcego amamentando: %s"% bat.amamentar())
+print("Morcego voando: %s"% bat.voar())
+```
+
+> OBS: quando você chama uma função que já foi definida antes (de quem você está herdando), o python já chama o super(). que pega a implementação original (da classe-mãe), mas se não tiver implementação lá, não faz sentido usar.
+
+## DECORADORES
+

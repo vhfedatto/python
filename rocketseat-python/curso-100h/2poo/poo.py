@@ -117,3 +117,20 @@ class Mamifero(Animal):
 class Ave(Animal):
     def voar(self):
         return f"{self.nome} está voando."
+    
+class Morcego(Ave, Mamifero):
+    def emitir_som(self):
+        super().emitir_som() # Não faz diferença aqui. Para Clean code, delete.
+        return "Morcegos emitem sons ultrassônicos."
+
+bat = Morcego(nome="Batman")
+
+print("Nome: %s"%bat.nome)
+print(f"Som do morcego {bat.emitir_som()}")
+
+# Acessando métodos das classes Mamifero e Ave
+print("Morcego amamentando: %s"% bat.amamentar())
+print("Morcego voando: %s"% bat.voar())
+
+
+# DECORADORES
