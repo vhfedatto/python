@@ -264,4 +264,4 @@ print(f"Solicitação para {url} retornou o status {response.status_code}")
 ---
 
 We have finished this classes (01 to 15).
-Next class: [Conditionals](conditionals.md)
+Next class: [Conditionals](aula2_conditionals.md)

@@ -126,3 +126,7 @@ else: # Executa caso seja bem sucedido.
 finally: # Executar mesmo com exceção - vai fazer de toda forma
     print("Operação Finalizada")
 ```
+
+---
+We have finished this classes (16 to 30).
+Next class: [OOP](aula3_poo.md)

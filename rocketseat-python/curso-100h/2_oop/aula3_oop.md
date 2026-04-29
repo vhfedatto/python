@@ -203,4 +203,82 @@ print("Morcego voando: %s"% bat.voar())
 > OBS: quando você chama uma função que já foi definida antes (de quem você está herdando), o python já chama o super(). que pega a implementação original (da classe-mãe), mas se não tiver implementação lá, não faz sentido usar.
 
 ## DECORADORES
+> Tipo especial de função que permite modificar ou estender o comportamento de outras funções.
 
+> Consegue adicionar funcionalidades a funções e métodos que não precisam alterar o código original da função.
+
+Sintaxe básica:
+
+```python
+def meu_decorador(func):
+    def wrapper():
+        print("Antes da função ser chamada")
+        func()
+        print("Depois da função ser chamada")
+    return wrapper
+
+@meu_decorador
+def minha_funcao():
+    print("Minha função foi chamada.")
+
+minha_funcao()
+
+# Exemplo: Validar se o usuário está logado
+```
+
+Decorador de classe:
+```python
+from typing import Any
+
+class MeuDecoradorDeClasse:
+    def __init__(self, func) -> None:
+        self.func = func
+
+    def __call__(self) -> Any:
+        print("Antes da função ser chamada.")
+        self.func()
+        print("Depois da função ser chamada.")
+        pass
+
+@MeuDecoradorDeClasse
+def segunda_funcao():
+    print("Segunda função foi chamada")
+
+segunda_funcao()
+```
+
+### Exemplos de uso:
+
+Class Method
+```python
+class Carro:
+    def __init__(self, marca, modelo, ano) -> None:
+        self.marca = marca
+        self.modelo = modelo
+        self.ano = ano
+    
+    @classmethod
+    def criar_carro(cls, config):
+        marca,modelo,ano = config.split(", ")
+        return cls(marca, modelo, int(ano))
+
+config1 = "Toyota, Corolla, 2022"
+carro1 = Carro.criar_carro(config1)
+print(f"Marca: {carro1.marca}\nModelo: {carro1.modelo}\nAno: {carro1.ano}")
+```
+
+Static Method
+```python
+class Matematica:
+    
+    @staticmethod
+    def somar(a,b):
+        return a + b
+    
+print(Matematica.somar(a=10, b=15))
+# Tome muito cuidado com os static method, pois um código cheio deles não é sinal de boa programação. Deixa o código bagunçado e é muito mais difícil de suporte.
+```
+
+---
+
+Próxima aula: []()

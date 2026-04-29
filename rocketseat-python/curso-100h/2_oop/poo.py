@@ -131,6 +131,3 @@ print(f"Som do morcego {bat.emitir_som()}")
 # Acessando métodos das classes Mamifero e Ave
 print("Morcego amamentando: %s"% bat.amamentar())
 print("Morcego voando: %s"% bat.voar())
-
-
-# DECORADORES
