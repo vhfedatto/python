@@ -136,6 +136,58 @@ API server -> API -> Response -> Client (browser)
 
 ## DOCUMENTAÇÃO DE API COM SWAGGER
 
+Importância:
+1. **Antes da construção**: Visualizar como vão funcionar os endpoints, quais os tipos de resposta, quais os parâmetros para receber - Visão da API de como ela deve ser.
+
+2. **Depois da construção**: Stakeholders farão uso da documentação para entender como a sua API funciona.
+
+> **Swagger**: Dá exemplo de como uma API pode ser documentada. [Editor - Swagger](https://editor.swagger.io/) 
+
+---
+
+## TESTES DE API COM POSTMAN (APIDOG, INSOMNIA)
+
+- Coleção -> Agrupamento de requisições (Get, Post, Put, Delete...)
+
+- Vá no Swagger, baixe o YAML, vai no Postman > Import (faça login ou sign-in) > Coloca o .yaml > ele cria a coleção com todas as requisições do swagger.
+
+- Vá em **Environments** > New > Nome > variável é o nome que tá no yaml (nesse caso, "baseUrl") > initial value: link do 127.0.0.1:5000.
+- Volte na sua coleção e selecione o seu novo environment no icone superior direito de "Environment".
+
+- Essa parte do "Environment" é importante para você não ter que ficar trocando no teu código quando o baseUrl mudar (tipo rodar em AWS etc.).
+
+---
+
+## GIT, GITHUB X GITLAB X BITBUCKET
+
+> Git: Software de código aberto para VERSIONAMENTO de código - sucessor do SVN.
+
+- Caso tenha um problema, você pode voltar para a versão anterior.
+- Diversas outras empresas usam o Git, mas com uma interface mais bonita etc (github, gitlab...)
+
+> GitHub: Local com diversos repositórios públicos, privados, para armazenar os seus códigos. Mais usados por programadores.
+
+> GitLab: Não é só uma ferramenta para versionamento, pois possui uma esteira de CI/CD para implementação do código. Mais comum em empresas.
+
+> BitBucket: Mais usado em empresas também, pois tem uma boa integração com o Jira - usado pela galera dos Métodos Ágeis - controle de atividades.
+
+---
+
+### GitHub
+- Roda todos os tipos de arquivo - versiona todos os tipos de arquivo.
+
+> Ramificações: Separação melhor do código
+
+Hora de criar o repositório do projeto: "tasks-flask-crud" + ReadMe + Public + gitignore= "python".
+
+Meu repositório: [vhfedatto/tasks-flask]()
+
+
+#### Baixar o repositório:
+```git
+git clone [link do repositorio]
+```
 
 
 
+---
