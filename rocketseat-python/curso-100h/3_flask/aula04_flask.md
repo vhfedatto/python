@@ -184,10 +184,31 @@ Meu repositório: [vhfedatto/tasks-flask]()
 
 
 #### Baixar o repositório:
+
 ```git
 git clone [link do repositorio]
 ```
 
+#### Subindo o código alterado:
 
+```git
+git status -> diz quais os arquivos foram modificados.
+
+git add [nome do arquivo]
+
+git add . -> adiciona tudo
+
+git commit -m "[titulo do commit]"
+
+git push origin main 
+```
+#### Boas extensões
+
+- Gitlens -> Consegue ver alterações de outros devs - ajuda a ter mais controle.
 
 ---
+
+Próximas aulas serão sobre a criação do CRUD
+
+---
+
