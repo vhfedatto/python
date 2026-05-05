@@ -208,7 +208,30 @@ git push origin main
 
 ---
 
+## PARÂMETROS NO FLASK
+
+```python
+@app.route("/tasks/<int:user_id>") # Quando não coloca o conversor, ele retornará sempre string.
+def show_user(user_id):
+    print(user_id)
+    print(type(user_id))
+    return "%s" % user_id
+```
+[URL Route Registrations](https://flask.palletsprojects.com/en/stable/api/)
+
+5 tipos para parâmetro de rota:
+
+>1. string
+>2. int
+>3. float
+>4. path
+>5. uuid -> hash, sequência de caracteres para identificar um recurso. Tem bibliotecas do python que geram o uuid. Só importar o uuid.
+
+---
+
 Próximas aulas serão sobre a criação do CRUD
 
 ---
+
+Next class markdown: []()
 
