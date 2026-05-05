@@ -229,7 +229,32 @@ def show_user(user_id):
 
 ---
 
-Próximas aulas serão sobre a criação do CRUD
+Aulas de criação do CRUD de Tarefas em: [App.py](tasks-flask/app.py)
+
+---
+
+## TESTES USANDO PYTEST
+
+- Fazer a instalação do requirements.
+- Rodar o projeto.
+- em outro terminal, no meu caso, rodar ```python -m pytest tests.py -v```.
+- Esperar um ```PASSED - 100%```
+
+> O MERCADO VALORIZA PROGRAMADORES QUE **TESTAM** O SEU CÓDIGO! ISSO VALE OURO.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 

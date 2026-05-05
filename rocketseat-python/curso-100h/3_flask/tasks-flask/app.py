@@ -16,12 +16,18 @@ def create_task():
     global task_id_control # Função terá acesso ao valor original da variável criada fora e poderá atualizar o valor.
 
     data = request.get_json() # request vem do Flask - recuperar as informações
-    new_task = Task(id= task_id_control, name=data['title'], description=data.get("description", ""))
+    if not data or "title" not in data:
+        return jsonify({"message": "O campo title é obrigatório"}), 400
+
+    new_task = Task(
+        id=task_id_control,
+        title=data["title"],
+        description=data.get("description", "")
+    )
     task_id_control+=1
 
     tasks.append(new_task)
-    print(tasks)
-    return jsonify({"message": "Nova tarefa criada com sucesso"}) # Retorno com dicionário que será um json. Melhor para as APIs conseguirem controlar no futuro.
+    return jsonify({"message": "Nova tarefa criada com sucesso", "id": new_task.id}) # Retorno com dicionário que será um json. Melhor para as APIs conseguirem controlar no futuro.
 
 # GET - READ
 @app.route("/tasks", methods=['GET'])
@@ -49,14 +55,18 @@ def update_task(id):
     for i in tasks:
         if i.id == id:
             task = i
+            break
         
     if task == None:
-        return({"message": "Não foi possível encontrar a atividade"}), 404
+        return jsonify({"message": "Não foi possível encontrar a atividade"}), 404
 
     data = request.get_json()
-    task.title = data['title']
-    task.description = data['description']
-    task.completed = data['completed']
+    if not data:
+        return jsonify({"message": "Corpo da requisição inválido"}), 400
+
+    task.title = data.get('title', task.title)
+    task.description = data.get('description', task.description)
+    task.completed = data.get('completed', task.completed)
 
     return jsonify({"message": "Tarefa atualizada com sucesso"})
 
