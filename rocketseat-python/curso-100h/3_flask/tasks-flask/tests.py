@@ -21,3 +21,55 @@ def test_create_task():
 
     tasks.append(response_json['id'])
 
+# READ
+def test_get_tasks():
+    response = requests.get(f"{BASE_URL}/tasks") # não precisa passar o json, pq não tem nenhum corpo.
+    assert response.status_code == 200
+    response_json = response.json()
+
+    assert "tasks" in response_json
+    assert "total_tasks" in response_json
+
+# READ específico
+def test_get_task():
+    if tasks:
+        task_id = tasks[0]
+        response = requests.get(f"{BASE_URL}/tasks/{task_id}") 
+        assert response.status_code == 200
+        response_json = response.json()
+
+        assert task_id == response_json['id']
+
+# UPDATE
+def test_update_task():
+    if tasks:
+        task_id = tasks[0]
+        payload = { #utilizado para fazer a atualização
+            "completed": True,
+            "description": "Nova descrição",
+            "title": "Título atualizado"
+        }
+        response = requests.put(f"{BASE_URL}/tasks/{task_id}", json=payload)
+        response.status_code == 200
+        response_json = response.json()
+
+        assert "message" in response_json
+
+        # Nova requisição a tarefa específica:
+        response = requests.get(f"{BASE_URL}/tasks/{task_id}") 
+        assert response.status_code == 200
+        response_json = response.json()
+
+        assert response_json ['title'] == payload['title']
+        assert response_json ['description'] == payload['description']
+        assert response_json ['completed'] == payload['completed']
+
+# DELETE
+def test_delete_task():
+    if tasks:
+        task_id = tasks[0]
+        response = requests.delete(f"{BASE_URL}/tasks/{task_id}")
+        response.status_code == 200
+
+        response = requests.get(f"{BASE_URL}/tasks/{task_id}") 
+        assert response.status_code == 404
