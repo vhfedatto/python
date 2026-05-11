@@ -28,7 +28,7 @@ Flask-Cors==3.0.10
 Werkzeug==2.3.0
 ```
 
-- Baixar a instalação das dependências
+- Baixar a instalação das dependências.
 
 ```bash
 pip3 install -r requirements.txt
